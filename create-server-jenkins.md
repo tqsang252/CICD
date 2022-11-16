@@ -45,6 +45,7 @@ docker ps
 ![URL Jenkins](/assets/url-jenkins.PNG "URL Jenkins")
 
 ![First Jenkins](/assets/first-jenkins.PNG "First Jenkins")
+
 **7. Get first password Jenkins**
 
 docker logs jenkins     &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;#To see logs of the container name jenkins
