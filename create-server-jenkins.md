@@ -26,8 +26,8 @@ docker  -v
 **5. Pull the Jenkins image using docker**
 ```js
 docker pull jenkins/jenkins:latest       	    # To pull the image of jenkins
-docker images                                   # To see if image is downloaded or not
-mkdir jenkins                                   # To make directory name jenkins 
+docker images                                       # To see if image is downloaded or not
+mkdir jenkins                                       # To make directory name jenkins 
 docker run -d --name jenkins -p 8080:8080 -v $PWD/jenkins/ jenkins/jenkins     # To run a container name jenkins using jenkins image 
 docker ps  
 ```
