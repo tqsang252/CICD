@@ -27,7 +27,7 @@ docker  -v
 ```js
 docker pull jenkins/jenkins:latest       	    # To pull the image of jenkins
 docker images                                   # To see if image is downloaded or not
-mkdir jenkins                                   #To make directory name jenkins 
+mkdir jenkins                                   # To make directory name jenkins 
 docker run -d --name jenkins -p 8080:8080 -v $PWD/jenkins/ jenkins/jenkins     # To run a container name jenkins using jenkins image 
 docker ps  
 ```
@@ -43,7 +43,7 @@ docker ps
 
 **7. Get first password Jenkins**
 ```js
-docker logs jenkins     &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;#To see logs of the container name jenkins
+docker logs jenkins                             #To see logs of the container name jenkins
 ```
 
 ![Password Jenkins](/assets/pass-jenkins.jpg "Password Jenkins")
