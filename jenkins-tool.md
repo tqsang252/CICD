@@ -10,11 +10,13 @@
 
 *use run docker command in Jenkinsfile*
 
-*Accept Docker deamon for Jenkins*
+*Accept Docker deamon for Jenkins* 
 
 ---Stop docker container
 
----Start docker and mount docker from host to jenkins container
+---Start docker and mount docker from host to jenkins container (Replace <DOCKER_VOLUME_NAME>)
+
+---Check Docker volume : docker volume ls
 
 ```js
 docker run -p 8080:8080 -p 50000:50000 -d \
