@@ -10,6 +10,25 @@
 
 *use run docker command in Jenkinsfile*
 
+*Accept Docker deamon for Jenkins*
+
+---Stop docker container
+
+---Start docker and mount docker from host to jenkins container
+
+```js
+docker run -p 8080:8080 -p 50000:50000 -d \
+-v  <DOCKER_VOLUME_NAME>:/var/jenkins_home \
+-v /var/run/docker.sock:/var/run/docker.sock \
+-v $(which docker):/usr/bin/docker jenkins/jenkins
+
+sudo su -
+
+docker exec  -u 0 -it id bash
+
+chmod 777 /var/run/docker.sock
+```
+
 **4. Manage Jenkins > Global Tool Configuration**
 
 ![Nodejs](/assets/Nodejs-jenkins.PNG "Nodejs")
