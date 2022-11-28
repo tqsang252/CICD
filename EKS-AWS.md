@@ -66,9 +66,17 @@ aws eks --region region update-kubeconfig --name cluster_name
 Note: Replace region with your AWS Region. Replace cluster_name with your cluster name.
 
 ```js
+kubectl cluster-info
+
 kubectl get pods
 
 kubectl get svc
 
+kubectl get deployments
+
 kubectl apply -f test.yaml
+
+kubectl scale deployments nginx --replicas=5
+
+kubectl expose deployments/nginx --type=LoadBalancer --port=80
 ```
