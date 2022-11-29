@@ -29,6 +29,12 @@ Create
 
 **3. Create Cluster Group Node**
 
+![Group Node Step 1](/assets/eks-created-node-group.PNG "Group Node Step 1")
+
+![Group Node Step 2](/assets/eks-configure-node-group.PNG "Group Node Step 2")
+
+*Next and Create*
+
 **4. Connect Cluster Local**
 
 *4.1. Install and configure your toolchain*
