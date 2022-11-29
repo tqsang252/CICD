@@ -52,6 +52,34 @@ docker logs jenkins                             #To see logs of the container na
 
 ![Install plugins Jenkins](/assets/install-plugins.png "Install plugins")
 
-**8. Create Admin account**
+**9. Create Admin account**
 
 ![Login Jenkins](/assets/login-admin.png "Login plugins")
+
+**10. Install aws-cli in docker container jenkins**
+```js
+sudo su -
+
+docker exec  -u 0 -it <CONTAINER_ID> bash
+
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+
+unzip awscliv2.zip
+
+./aws/install
+
+aws --version
+```
+
+**11. Install kubectl in docker container jenkins**
+```js
+sudo su -
+
+docker exec  -u 0 -it <CONTAINER_ID> bash
+
+curl -LO "https://dl.k8s.io/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl.sha256"
+
+install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+
+kubectl version --client
+```

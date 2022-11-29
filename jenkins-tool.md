@@ -47,3 +47,37 @@ chmod 777 /var/run/docker.sock
         nodejs "Node14"
     }
 ```
+
+**5. Add and Enabled plugins: Multibranch Scan Webhook Trigger**
+
+*Trigger jenkins deployed when push code to github branch*
+
+![Webhook Jenkins](/assets/jenkins-webhook-config.PNG "Webhook Jenkins")
+
+![Webhook Github](/assets/github-webhook-config.PNG "Webhook Github")
+
+*Payload URL*
+
+```js
+<URL_JENKINS>:8080/multibranch-webhook-trigger/invoke?token=<TRIGGER_TOKEN>
+```
+
+```js
+Example:
+
+URL_JENKINS = http://13.214.200.95
+TRIGGER_TOKEN = codoki
+```
+
+**5. Add and Enabled plugins: Pipeline: AWS Steps**
+
+*AWS configure in Jenkins file*
+
+![AWS](/assets/AWS_CREDENTIAL.PNG "AWS")
+
+```js
+    withAWS([credentials: 'AWS credentials', region: '<REGION_CODE>']) {
+        sh 'aws eks --region <REGION_CODE> update-kubeconfig --name <CLUSTER_NAME>'
+        sh 'kubectl apply -f deployment.yml'
+    }
+```
